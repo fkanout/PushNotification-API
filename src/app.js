@@ -8,6 +8,7 @@ const open = require('./helpers/amqp');
 const pushNotification = require('./pushNotification');
 
 (async () => {
+    console.log('PushNotification started !');
     try{
         const connection = await open;
         const ok = await connection.createChannel();
