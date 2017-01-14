@@ -5,6 +5,7 @@
 'use strict';
 var FCM = require('fcm-push');
 module.exports = (payload) =>{
+    console.log(payload);
     var fcm = new FCM(process.env.FCM_SERVER_KEY);
     var message = {
         to: payload.token,
@@ -14,6 +15,7 @@ module.exports = (payload) =>{
         }
     };
     fcm.send(message, function(err, response){
+        console.log('Sending');
         if (err) {
             console.log("Something has gone wrong!");
             console.log(err);
